@@ -1,4 +1,7 @@
+from menu import Dish
 class PriceError(Exception):
-    def __init__(self, price):
-        self.price = price
-        super().__init__(f"Price {price} is invalid")
+    """Exception raised for invalid prices."""
+
+    def __init__(self, message="Invalid price for dish. Price must be a positive number."):
+        self.message = message
+        super().__init__(self.message)

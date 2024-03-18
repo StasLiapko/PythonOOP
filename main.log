@@ -1,0 +1,6 @@
+2024-03-13 11:27:54,330:__main__:ERROR:Exception occurred
+Traceback (most recent call last):
+  File "c:\Python Folder\PythonOOP\product\main.py", line 37, in <module>
+    for product, quantity in cart_1:
+        ^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable Product object

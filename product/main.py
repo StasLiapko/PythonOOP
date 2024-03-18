@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
         print(cart_1)
         
-        for product in cart_1:
-            print(product)
+        for product, quantity in cart_1:
+            print(product, quantity)
     except Exception as e:
         logger.exception("Exception occurred")

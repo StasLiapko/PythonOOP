@@ -11,3 +11,14 @@ class Client:
 
     def create_order(self, *dishes):
         return list(dishes)
+    
+    def __add__(self, other):
+        if not isinstance(other, Client):
+            raise TypeError("Unsupported operand type(s) for +: 'Client' and '{}'".format(type(other)))
+        return self.get_total_price([]) + other.get_total_price([])
+    
+    def __iter__(self):
+        return iter(self.orders)  
+
+    def __getitem__(self, index):
+        return self.orders[index]  
