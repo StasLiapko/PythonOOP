@@ -1,5 +1,19 @@
-limit = int(input("Input limit "))  
+def add_html_tags(tag):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+            return f"<{tag}>{result}</{tag}>"
+        return wrapper
+    return decorator
 
-list = [x ** 3 for x in range(2, limit + 1)]
+@add_html_tags('b')
+def b(text):
+    return text
 
-print(list)
+@add_html_tags('span')
+def span(text):
+    return text
+
+paragraph = span(b("Text"))
+
+print(paragraph)
